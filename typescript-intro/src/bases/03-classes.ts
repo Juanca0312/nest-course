@@ -9,6 +9,7 @@
 }*/
 
 import axios from 'axios';
+import { Move, PokeapiResponse } from '../interfaces/pokeapi-repsonse.interface';
 
 
 export class Pokemon {
@@ -25,8 +26,11 @@ export class Pokemon {
         console.log('gaaa');
     }
 
-    async getMoves() {
-        const {data} = await axios.get('https://pokeapi.co/api/v2/pokemon/4');
+    async getMoves(): Promise<Move[]> {
+        const { data } = await axios.get<PokeapiResponse>('https://pokeapi.co/api/v2/pokemon/4');
+
+        console.log(data.moves[0]);
+
 
         return data.moves;
     }
@@ -34,3 +38,4 @@ export class Pokemon {
 
 export const charmander = new Pokemon(1, 'charmander')
 charmander.getMoves()
+
