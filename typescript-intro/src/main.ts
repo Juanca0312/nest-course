@@ -1,4 +1,4 @@
-import { charmander } from './bases/04-injection'
+import { charmander } from './bases/06-decorators2'
 import './style.css'
 import typescriptLogo from './typescript.svg'
 import viteLogo from '/vite.svg'
@@ -12,7 +12,7 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
     <a href="https://www.typescriptlang.org/" target="_blank">
       <img src="${typescriptLogo}" class="logo vanilla" alt="TypeScript logo" />
     </a>
-    <h1>Hola ${charmander.imageUrl}</h1>
+    <h1>Hola ${charmander.name}</h1>
 
     <p class="read-the-docs">
       Click on the Vite and TypeScript logos to learn more!
